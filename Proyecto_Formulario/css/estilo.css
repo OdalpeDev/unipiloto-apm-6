@@ -1,0 +1,27 @@
+body{
+	width: 90%;
+	font-family: verdana;
+    font-size: 20px;
+}
+
+form{
+	position: relative;
+    margin: auto;
+}
+
+form ul {
+    width: 750px;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+form ul li {
+    padding: 12px;
+    position: relative;
+}
+
+input{
+	padding: 10px;
+	border-radius: 3px;
+}
