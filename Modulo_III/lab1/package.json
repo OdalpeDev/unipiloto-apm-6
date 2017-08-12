@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/odalpe90/unipiloto-apm-6.git"
+    "url": "git+https://github.com/odalpe90/unipiloto-apm-6/tree/master/Modulo_III/lab1"
   },
   "keywords": [
     "Prueba",
@@ -19,5 +19,5 @@
   "bugs": {
     "url": "https://github.com/odalpe90/unipiloto-apm-6/issues"
   },
-  "homepage": "https://github.com/odalpe90/unipiloto-apm-6#readme"
+  "homepage": "https://github.com/odalpe90/unipiloto-apm-6/tree/master/Modulo_III/lab1#readme"
 }

@@ -1,0 +1,18 @@
+{
+  "name": "lab4",
+  "version": "1.0.0",
+  "description": "ejemplo 4",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/odalpe90/unipiloto-apm-6/tree/master/Modulo_III/lab4"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "odalpe90",
+  "license": "MIT"
+}
