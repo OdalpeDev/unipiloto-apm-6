@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
+
+body{
+    color: #333;
+    font-family: "Fjalla One", Arial, "Monaco", sans-serif;
+    font-size: 16px;
+}
+
+#container{
+    margin: 0 auto;
+    max-width: 960px;
+}
+
+header{
+    background: #808080;
+    border-bottom: 1px solid;
+}
+
+#container header{
+    background: #af9f6d;
+    border-bottom: 1px solid;
+}
+
+#container header h1{
+    font-size: 4em;
+    margin: 1em;
+}
+
+#container header p{
+    font-size: 2em;
+    margin: 1em;
+}
+
+#container #content{
+    background: #dedede;
+    padding: 10px;
+}
+
+#container #content article{
+    background: #FFF;
+    border-bottom: 2px solid #3117ff;
+}
+
+#container footer{
+    background: #af9f6d;
+}
+
+@media screen and (min-width: 991px) and (max-width: 1200px) {}
+
+#container header{
+         border-bottom: 1px solid;
+        padding: 8px;
+        text-align: center;
+    }
+
+#container header h1{
+        font-size: 4em;
+        margin: 1px;
+    }
+
+#container header p{     
+        font-size: 2em;
+        margin: 1em;
+    }
+
+@media screen and (min-width: 768px) and (max-width: 990px) {
+
+    #container header{
+        background: #E8DE16;
+    }
+
+    #container header h1{
+        color: #0428BC;
+    }
+
+    #container header p{
+        color: red;
+    }
+
+    #container #content{
+        background: #504D4D;
+    }
+
+    #container footer{
+        background: #000000;
+        color: #ffffff;
+    }
+
+}
+
+@media screen and (min-width: 465px) and (max-width: 767px){
+    #container header{
+        background: #dd2120;
+        width: 40%;
+        float: left;
+        display: inline-block;
+    }
+
+    #container header h1{      
+        color: #000000;     
+    }
+
+    #container header p{        
+        color: #FFFFFF;        
+    }
+
+    #container #content{
+        display: inline-block;
+        float: left;
+        width: 55%;
+        background: #F7AC4D;
+    }
+
+    #container footer{
+        clear: both;
+        background: #33A73A;
+        color: #ffffff;
+    }
+}
+
+@media screen and (max-width: 464px){
+    body{
+        min-width: 446px;
+    }
+    
+    #container header{
+        background: #43BC26;
+        border-bottom: 1px solid;
+        padding: 8px;
+        text-align: center;
+    }
+
+    #container header h1{
+        font-size: 8em;
+        margin: 1px;
+        color: #FFFFFF;
+    }
+
+    #container header p{
+        color: #087aff;
+        font-size: 2em;
+        margin: 1em;
+    }
+
+    #container #content{
+        background: #BCEE11;
+    }
+
+    #container footer{
+        background: #EE3D11;
+        color: #E7EE11;
+    }
+   
+}

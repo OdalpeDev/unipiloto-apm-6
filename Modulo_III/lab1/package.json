@@ -1,0 +1,23 @@
+{
+  "name": "lab1",
+  "version": "1.0.0",
+  "description": "Ejemplo primer paquete Nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/odalpe90/unipiloto-apm-6.git"
+  },
+  "keywords": [
+    "Prueba",
+    "Nodejs"
+  ],
+  "author": "odalpe90",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/odalpe90/unipiloto-apm-6/issues"
+  },
+  "homepage": "https://github.com/odalpe90/unipiloto-apm-6#readme"
+}
