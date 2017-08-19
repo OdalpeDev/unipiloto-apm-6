@@ -1,0 +1,19 @@
+{
+  "name": "lab2",
+  "version": "1.0.0",
+  "description": "ejemplo clases y herencia ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/odalpe90/unipiloto-apm-6/tree/master/Modulo_IV/lab2"
+  },
+  "keywords": [
+    "clases",
+    "nodejs"
+  ],
+  "author": "odalpe90",
+  "license": "MIT"
+}
