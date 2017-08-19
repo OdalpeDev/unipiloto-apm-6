@@ -1,0 +1,27 @@
+<h1>{{ title }}</h1>
+<h2>{{ alumno.name }} details!</h2>
+<label for="id">id</label> <span>{{ alumno.id }}</span><br />
+<label for="age">age</label> <span>{{ alumno.age }}</span><br />
+<label for="name">name</label> <span>{{ alumno.name }}</span><br />
+<label for="lastname">lastname</label> <span>{{ alumno.lastname }}</span><br />
+<label for="classes">classes</label> <span>{{ alumno.classes }}</span><br />
+<label for="grade">grade</label> <span>{{ alumno.grade }}</span><br />
+<label for="group">group</label> <span>{{ alumno.group }}</span><br />
+
+<div>
+    <hr />
+    <label>id: </label><br />
+    <input [(ngModel)]="alumno.id" placeholder="id"><br />
+    <label>age: </label><br />
+    <input [(ngModel)]="alumno.age" placeholder="age"><br />
+    <label>Name: </label><br />
+    <input [(ngModel)]="alumno.name" placeholder="name"><br />
+    <label>lastname: </label><br />
+    <input [(ngModel)]="alumno.lastname" placeholder="lastname"><br />
+    <label>classes: </label><br />
+    <input [(ngModel)]="alumno.classes" placeholder="classes"><br />
+    <label>grade: </label><br />
+    <input [(ngModel)]="alumno.grade" placeholder="grade"><br />
+    <label>group: </label><br />
+    <input [(ngModel)]="alumno.group" placeholder="group"><br />
+</div>

@@ -1,0 +1,35 @@
+<h1>{{ title }}</h1>
+<ul>
+    <li *ngFor="let teacher of teachers" (click)="onSelect(teacher)">
+        <span>{{teacher.id}}</span> {{teacher.name}}
+    </li>
+</ul>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Lastname</th>
+    </tr>
+    <tr *ngFor="let teacher of teachers" (click)="onSelect(teacher)">
+        <td>{{teacher.id}}</td>
+        <td>{{teacher.name}}</td>
+        <td>{{teacher.lastname}}</td>
+    </tr>
+</table>
+
+<div *ngIf="selected">
+    <hr />
+    <label>Name: </label><br />
+    <input [(ngModel)]="selected.name" placeholder="Nombre"><br />
+    <label>lastname: </label><br />
+    <input [(ngModel)]="selected.lastname" placeholder="Apellido"><br />
+    <label>Age: </label><br />
+    <input [(ngModel)]="selected.age" placeholder="Edad"><br />
+    <label>Profession: </label><br />
+    <input [(ngModel)]="selected.profession" placeholder="Profesión"><br />
+    <label>Grades: </label><br />
+    <input [(ngModel)]="selected.grades" placeholder="Grados"><br />
+    <label>Groups: </label><br />
+    <input [(ngModel)]="selected.groups" placeholder="Grupos"><br />
+</div>
