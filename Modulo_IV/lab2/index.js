@@ -123,8 +123,8 @@ var student2 = new Student();
 student2.asignardatos_persona(222, 16, "Pedro", "Segundo");
 student2.asignardatos_student(["Quimica", "Fisica"], 11, "11C");
 var student3 = new Student();
-student1.asignardatos_persona(333, 11, "Pablo", "Tercero");
-student1.asignardatos_student(["Matematicas", "Fisica", "Sociales"], 8, "8B");
+student3.asignardatos_persona(333, 11, "Pablo", "Tercero");
+student3.asignardatos_student(["Matematicas", "Fisica", "Sociales"], 8, "8B");
 //creación de los profesores
 var teacher1 = new Teacher();
 teacher1.asignardatos_persona(9875, 34, "Ana", "Primero");
@@ -150,5 +150,22 @@ list_students.forEach(function (s) {
 var list_teachers = [teacher1, teacher2, teacher3, teacher4];
 console.log("Lista de profesores:");
 list_teachers.forEach(function (infoteacher) {
-    console.log(infoteacher);
+    console.log("******************************************" +
+        "\nID            : " + infoteacher.getid() +
+        "\nName          : " + infoteacher.getname() +
+        "\nLastname      : " + infoteacher.getlastname() +
+        "\nAge           : " + infoteacher.getage() +
+        "\nProfession    : " + infoteacher.getprofession() +
+        "\nGrades        : " + infoteacher.getgrades() +
+        "\nGroups        : " + infoteacher.getgroups() +
+        "\nStudents      : ");
+    infoteacher.getstudents().forEach(function (lstudent) {
+        console.log("\n               -->    ID : " + lstudent.getid() +
+            "\n                     Name: " + lstudent.getname() +
+            "\n                 Lastname: " + lstudent.getlastname() +
+            "\n                     Age : " + lstudent.getage() +
+            "\n                  Classes: " + lstudent.getclasses() +
+            "\n                    Grade: " + lstudent.getgrade() +
+            "\n                    Group: " + lstudent.getgroup());
+    });
 });
