@@ -1,0 +1,36 @@
+<h1>{{ title }}</h1>
+<ul>
+    <li *ngFor="let vehicle of vehicles" (click)="onSelect(vehicle)">
+        <span>{{vehicle.plate}}</span>
+    </li>
+</ul>
+
+<div *ngIf="selected">
+    <h2>Detalle del vehiculo:</h2>
+    <hr />
+    <label>Brand: </label><br />
+    <input [(ngModel)]="selected.brand" placeholder="Brand"><br />
+    <label>Model: </label><br />
+    <input [(ngModel)]="selected.model" placeholder="Model"><br />
+    <label>Color: </label><br />
+    <input [(ngModel)]="selected.color" placeholder="Color"><br />
+    <label>Plate: </label><br />
+    <input [(ngModel)]="selected.plate" placeholder="Plate"><br />
+    <label>Capacity: </label><br />
+    <input [(ngModel)]="selected.capacity" placeholder="Capacity"><br />
+    <label>Build year: </label><br />
+    <input [(ngModel)]="selected.build_year" placeholder="Build year"><br />
+    <br />
+    <h2>{{title2}}</h2>
+    <label>ID: </label><br />
+    <input [(ngModel)]="selected.driver.id" placeholder="Brand"><br />
+    <label>License: </label><br />
+    <input [(ngModel)]="selected.driver.license" placeholder="Model"><br />
+    <label>First_name: </label><br />
+    <input [(ngModel)]="selected.driver.first_name" placeholder="Color"><br />
+    <label>Last_name: </label><br />
+    <input [(ngModel)]="selected.driver.last_name" placeholder="Plate"><br />
+    <label>Age: </label><br />
+    <input [(ngModel)]="selected.driver.age" placeholder="Capacity"><br />
+    <hr />
+</div>
