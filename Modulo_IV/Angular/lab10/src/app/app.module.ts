@@ -1,14 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { TeacherDetailComponent } from '../section/teacher.component';
+import { StudentDetailComponent } from '../section/student/student.component';
+import { TeacherDetailComponent } from '../section/teacher/teacher.component';
 
 import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TeacherDetailComponent
+    TeacherDetailComponent,
+    StudentDetailComponent
   ],
   imports: [
     BrowserModule,
