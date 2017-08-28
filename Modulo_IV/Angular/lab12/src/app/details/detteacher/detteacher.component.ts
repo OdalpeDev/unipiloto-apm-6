@@ -4,8 +4,7 @@ import {Teacher} from '../../../models/teacher'
 
 @Component({
   selector: 'teacher-detail',
-  templateUrl: './detteacher.component.html',
-  styleUrls: ['./detteacher.component.css']
+  templateUrl: './detteacher.component.html'
 })
 export class DetteacherComponent{
   @Input()

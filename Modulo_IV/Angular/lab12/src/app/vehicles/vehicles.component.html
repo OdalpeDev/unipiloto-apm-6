@@ -1,3 +1,8 @@
-<p>
-  vehicles works!
-</p>
+<h1>{{ titleVehicles }}</h1>
+
+<p>Seleccione el vehiculo del cual requiere información:</p>
+<select [(ngModel)]="plateVehicle" (change)="onSelectVehicle()">
+  <option *ngFor="let vehicle of vehicles" value="{{vehicle.plate}}">{{vehicle.brand}} {{vehicle.model}} ({{vehicle.plate}})</option>
+</select>
+
+<vehicle-detail [vehicle]="selectedVehicle"></vehicle-detail>

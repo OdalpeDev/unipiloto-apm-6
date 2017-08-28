@@ -12,6 +12,8 @@ import { DriversComponent } from './drivers/drivers.component';
 import { VehiclesComponent } from './vehicles/vehicles.component';
 import { StudentDetailComponent } from './details/detstudent/detstudent.component';
 import { DetteacherComponent } from './details/detteacher/detteacher.component';
+import { DetvehiclesComponent } from './details/detvehicles/detvehicles.component';
+import { DetdriverComponent } from './details/detdriver/detdriver.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { DetteacherComponent } from './details/detteacher/detteacher.component';
     DriversComponent,
     VehiclesComponent,
     StudentDetailComponent,
-    DetteacherComponent    
+    DetteacherComponent,
+    DetvehiclesComponent,
+    DetdriverComponent    
   ],
   imports: [
     BrowserModule,

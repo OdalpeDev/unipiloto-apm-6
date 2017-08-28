@@ -1,3 +1,8 @@
-<p>
-  drivers works!
-</p>
+<h1>{{ titleDriver }}</h1>
+
+<p>Seleccione el conductor del cual requiere información:</p>
+<select [(ngModel)]="idDriver" (change)="onSelectDrive()">
+  <option *ngFor="let driver of drivers" value="{{driver.id}}">{{driver.name}} {{driver.lastname}} ({{driver.id}})</option>
+</select>
+
+<driver-detail [driver]="selectedDrive"></driver-detail>
