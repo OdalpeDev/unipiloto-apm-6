@@ -10,7 +10,8 @@ import { TeachersComponent } from './teachers/teachers.component';
 import { StudentsComponent } from './students/students.component';
 import { DriversComponent } from './drivers/drivers.component';
 import { VehiclesComponent } from './vehicles/vehicles.component';
-import { StudentDetailComponent } from '../details/detstudent/detstudent.component';
+import { StudentDetailComponent } from './details/detstudent/detstudent.component';
+import { DetteacherComponent } from './details/detteacher/detteacher.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { StudentDetailComponent } from '../details/detstudent/detstudent.compone
     StudentsComponent,
     DriversComponent,
     VehiclesComponent,
-    StudentDetailComponent    
+    StudentDetailComponent,
+    DetteacherComponent    
   ],
   imports: [
     BrowserModule,

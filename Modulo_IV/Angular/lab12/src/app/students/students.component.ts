@@ -7,17 +7,18 @@ import { Student } from '../../models/student';
 })
 export class StudentsComponent implements OnInit {
   constructor() { }
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   titleStudent = 'Students:';
+  idStudent: number;
   selectedStudent: Student;
   students: Student[] = STUDENTS;
-
-  onSelectStudent(student: Student) {
-    this.selectedStudent = student;
+    
+  onSelectStudent() {
+    console.log( this.idStudent);
+    this.selectedStudent = STUDENTS.find(x => x.id == this.idStudent);
+    console.log( this.selectedStudent.name);
   }
-
 }
 
 const STUDENTS: Student[] = [

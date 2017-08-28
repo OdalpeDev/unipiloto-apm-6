@@ -1,3 +1,9 @@
-<p>
-  teachers works!
-</p>
+<h1>{{ titleTeacher}}</h1>
+<ul>
+  <li *ngFor="let teacher of teachers"
+      (click)="onSelectTeacher(teacher)">
+    <span>{{teacher.id}}</span> {{teacher.name}}
+  </li>
+</ul>
+
+<teacher-detail [teacher]="selectedTeacher"></teacher-detail>
