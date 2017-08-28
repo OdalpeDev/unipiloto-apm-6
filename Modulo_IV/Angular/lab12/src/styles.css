@@ -46,3 +46,8 @@ nav a{
     text-shadow: 1 1px 0 #CBCBCB;
     font-weight: 500;
 }
+
+select{
+    padding: 8px;
+    border:1px solid #6059FF;
+}

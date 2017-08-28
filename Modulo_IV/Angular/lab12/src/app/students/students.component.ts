@@ -15,9 +15,7 @@ export class StudentsComponent implements OnInit {
   students: Student[] = STUDENTS;
     
   onSelectStudent() {
-    console.log( this.idStudent);
-    this.selectedStudent = STUDENTS.find(x => x.id == this.idStudent);
-    console.log( this.selectedStudent.name);
+    this.selectedStudent = this.students.find(x => x.id == this.idStudent);
   }
 }
 

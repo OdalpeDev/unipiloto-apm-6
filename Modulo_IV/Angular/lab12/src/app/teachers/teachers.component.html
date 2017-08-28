@@ -1,9 +1,8 @@
 <h1>{{ titleTeacher}}</h1>
-<ul>
-  <li *ngFor="let teacher of teachers"
-      (click)="onSelectTeacher(teacher)">
-    <span>{{teacher.id}}</span> {{teacher.name}}
-  </li>
-</ul>
+
+<p>Seleccione el profesor del cual requiere información:</p>
+<select [(ngModel)]="idTeahcer" (change)="onSelectTeacher()">
+  <option *ngFor="let teacher of teachers" value="{{teacher.id}}">{{teacher.name}} {{teacher.lastname}} ({{teacher.id}})</option>
+</select>
 
 <teacher-detail [teacher]="selectedTeacher"></teacher-detail>

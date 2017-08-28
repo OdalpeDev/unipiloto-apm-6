@@ -11,11 +11,12 @@ export class TeachersComponent implements OnInit {
   ngOnInit() { }
 
   titleTeacher = 'Teachers:';
+  idTeahcer: number;
   selectedTeacher: Teacher;
   teachers: Teacher[] = TEACHERS;
 
-  onSelectTeacher(teacher: Teacher) {
-    this.selectedTeacher = teacher;
+  onSelectTeacher() {
+    this.selectedTeacher = this.teachers.find(x => x.id == this.idTeahcer);
   }
 
 }
