@@ -1,0 +1,8 @@
+<h2>{{ titleStudent }}</h2>
+
+<p>Seleccione el estudiante del cual requiere información:</p>
+<select [(ngModel)]="idStudent" (change)="onSelectStudent()">
+  <option *ngFor="let student of students" value="{{student.id}}">{{student.name}} {{student.lastname}} ({{student.id}})</option>
+</select>
+
+<student-detail [student]="selectedStudent"></student-detail>
