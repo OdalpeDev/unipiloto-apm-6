@@ -26,7 +26,7 @@ export class StudentService {
       return this.http
         .put(url, JSON.stringify(student), {headers: this.headers})
         .map(() => student)
-        .catch(this.handleError);
+        .catch(this.handleErrorObs);
     }
   
     create(name: string): Promise<Student> {
@@ -41,5 +41,10 @@ export class StudentService {
     private handleError(error: any): Promise<any> {
       console.error('An error occurred', error); // for demo purposes only
       return Promise.reject(error.message || error);
+    }
+
+    private handleErrorObs(error: any): Observable<any> {
+      console.error('An error occurred', error); // for demo purposes only
+      return Observable.throw(error.message || error);
     }
   }

@@ -21,7 +21,7 @@ export class ProductsService {
   update(product: Product): Observable<Product> {
     const url = `${this.productsURI}/${product.id}`;
     return this.http
-      .put(url, JSON.stringify(product), {headers: this.headers})
+      .put(this.productsURI, JSON.stringify(product), {headers: this.headers})
       .map(() => product)
       .catch(this.handleError);
   }
