@@ -1,0 +1,19 @@
+<div *ngIf="student">
+  <hr>
+  <h3>Detalle:</h3>
+  <label>ID: </label>
+  <input [(ngModel)]="student.id" placeholder="id"><br />
+  <label>Name: </label>
+  <input [(ngModel)]="student.name" placeholder="Name"><br />
+  <label>Lastname: </label>
+  <input [(ngModel)]="student.lastname" placeholder="Lastname"><br />
+  <label>Age: </label>
+  <input [(ngModel)]="student.age" placeholder="Age"><br />
+  <label>Classes: </label>
+  <input [(ngModel)]="student.classes" placeholder="Classes"><br />
+  <label>Grade: </label>
+  <input [(ngModel)]="student.grade" placeholder="Grade"><br />
+  <label>Group: </label>
+  <input [(ngModel)]="student.group" placeholder="Group"><br />
+  <button (click)="save()">Save</button>
+</div>
