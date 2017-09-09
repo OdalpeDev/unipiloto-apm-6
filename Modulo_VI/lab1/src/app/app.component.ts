@@ -22,12 +22,9 @@ export class AppComponent {
     this.items.subscribe(p => {
       this.persons = p;
       //p.forEach(i => {
-       // console.log(i.id + ' -------------- ' + i.name);
+      // console.log(i.id + ' -------------- ' + i.name);
       //})
     });
-
-
-
   }
 
   inicializarselected(): void {
@@ -59,7 +56,7 @@ export class AppComponent {
     this.inicializarselected();
   }
 
-  Clean(){
+  Clean() {
     this.inicializarselected();
   }
 }
