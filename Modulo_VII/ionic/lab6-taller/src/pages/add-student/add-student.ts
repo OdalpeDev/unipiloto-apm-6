@@ -1,8 +1,13 @@
 import { Component } from '@angular/core';
 import { ViewController, NavParams } from 'ionic-angular';
+<<<<<<< HEAD
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Storage } from '@ionic/storage';
 import {Student} from '../../models/student';
+=======
+import {Student} from '../../models/student';
+import { Storage } from '@ionic/storage';
+>>>>>>> 5eb32bd30da281b631bee70529b01a59e8694233
 
 @Component({
   selector: 'page-add-student',
@@ -10,6 +15,7 @@ import {Student} from '../../models/student';
 })
 export class AddStudentPage {
 
+<<<<<<< HEAD
   myForm: FormGroup;
   students: string;
   listStudent: Student[];
@@ -52,6 +58,15 @@ export class AddStudentPage {
         console.log('registrado');
       })
       .catch(error => console.error('Se presentó guardando datos del estudiante.' + error));
+=======
+  public datosStudent: Student;
+
+  constructor(public viewCtrl: ViewController, public navParams: NavParams, private storage: Storage ) {
+  }
+
+  saveDataStudent(){
+
+>>>>>>> 5eb32bd30da281b631bee70529b01a59e8694233
   }
 
   dismiss() {

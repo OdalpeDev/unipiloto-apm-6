@@ -1,4 +1,5 @@
 <ion-header>
+<<<<<<< HEAD
     <ion-navbar>
         <button ion-button menuToggle>
            <ion-icon name="menu"></ion-icon>
@@ -20,4 +21,26 @@
                <h3>{{student.id}}</h3>
             </button>
     </ion-list>
+=======
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Students</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-fab>
+    <button ion-fab>Button</button>
+  </ion-fab>
+  <ion-list>
+    <button ion-item *ngFor="let student of Students" (click)="studentSelected(student)">
+          {{ student.name }} {{ student.lastname }}
+          <div class="item-note" item-right>
+            {{student.id}}
+          </div>
+        </button>
+  </ion-list>
+>>>>>>> 5eb32bd30da281b631bee70529b01a59e8694233
 </ion-content>
