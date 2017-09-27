@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+           <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Students</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-fab edge right top>
+        <button ion-fab mini (click)="AddStudent()"><ion-icon ios="ios-person-add" md="md-person-add"></ion-icon></button>
+    </ion-fab>
+    <ion-list>
+        <button ion-item *ngFor="let student of students" (click)="studentSelected(student)">
+            <ion-avatar item-start center>
+                <img src="http://icons.iconarchive.com/icons/graphicloads/flat-finance/32/person-icon.png">
+            </ion-avatar>               
+               <h2>{{student.last_name}}, {{student.firt_name}}</h2>
+               <h3>{{student.id}}</h3>
+            </button>
+    </ion-list>
+</ion-content>
