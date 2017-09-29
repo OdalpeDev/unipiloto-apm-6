@@ -1,26 +1,21 @@
 import { Component } from '@angular/core';
-import { ViewController, NavParams } from 'ionic-angular';
-<<<<<<< HEAD
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Storage } from '@ionic/storage';
 import {Student} from '../../models/student';
-=======
-import {Student} from '../../models/student';
-import { Storage } from '@ionic/storage';
->>>>>>> 5eb32bd30da281b631bee70529b01a59e8694233
 
+@IonicPage()
 @Component({
   selector: 'page-add-student',
   templateUrl: 'add-student.html',
 })
 export class AddStudentPage {
 
-<<<<<<< HEAD
   myForm: FormGroup;
   students: string;
   listStudent: Student[];
 
-  constructor(public viewCtrl: ViewController, public navParams: NavParams, private storage: Storage, public formBuilder: FormBuilder) {
+  constructor( public navCtrl: NavController, public navParams: NavParams, private storage: Storage, public formBuilder: FormBuilder) {
     this.myForm = this.createForm();
   }
 
@@ -36,6 +31,7 @@ export class AddStudentPage {
     });
   }
 
+  //
   saveDataStudent() {
 
     this.storage.get('Students')
@@ -43,34 +39,23 @@ export class AddStudentPage {
         if (result == null) {
           this.students = '['+ JSON.stringify(this.myForm.value)+']';
           this.listStudent =  JSON.parse(this.students);
-          console.log('1 = ' + this.students);
-          console.log('1 = ' + JSON.stringify(this.listStudent));
         }
         else {
-          console.log('reg - 1');
           this.listStudent = JSON.parse(result);
-          console.log('reg -2');
           this.listStudent.push(this.myForm.value);
-          console.log('2 = ' + JSON.stringify(this.listStudent));
         }
 
         this.storage.set('Students',JSON.stringify(this.listStudent) );
-        console.log('registrado');
+        this.myForm.reset();
+
       })
       .catch(error => console.error('Se presentó guardando datos del estudiante.' + error));
-=======
-  public datosStudent: Student;
-
-  constructor(public viewCtrl: ViewController, public navParams: NavParams, private storage: Storage ) {
   }
 
-  saveDataStudent(){
-
->>>>>>> 5eb32bd30da281b631bee70529b01a59e8694233
-  }
-
-  dismiss() {
-    this.viewCtrl.dismiss();
-  }
+  //
+  CancelarAdd(){
+      this.navCtrl.pop();
+    }
+  
 
 }

@@ -1,27 +1,20 @@
 <ion-header>
-<<<<<<< HEAD
-    <ion-toolbar>
-        <ion-title>
-            Add-Student
-        </ion-title>
-        <ion-buttons start>
-            <button ion-button (click)="dismiss()">
-              <span color="primary" showWhen="ios">Cancel</span>
-              <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
-            </button>
-        </ion-buttons>
-    </ion-toolbar>
+
+    <ion-navbar>
+        <ion-title>Add-student</ion-title>
+    </ion-navbar>
+
 </ion-header>
 
 <ion-content padding>
     <form [formGroup]="myForm" (ngSubmit)="saveDataStudent()">
         <ion-list>
             <ion-item>
-                <ion-label floating>ID:</ion-label>
+                <ion-label floating>ID</ion-label>
                 <ion-input formControlName="id" type="number"></ion-input>
             </ion-item>
             <ion-item>
-                <ion-label floating>First Name:</ion-label>
+                <ion-label floating>First Name</ion-label>
                 <ion-input formControlName="firt_name" type="text"></ion-input>
             </ion-item>
             <ion-item>
@@ -52,81 +45,9 @@
                 <ion-input formControlName="group" type="text"></ion-input>
             </ion-item>
         </ion-list>
-        <div padding>
-            <button ion-button block type="submit" [disabled]="!myForm.valid">Guardar</button>
-        </div>
+
+        <button ion-button block type="submit" [disabled]="!myForm.valid">Guardar</button>
+        <button ion-button block color="light" type="button" (click)="CancelarAdd()">Cancel</button>
+
     </form>
 </ion-content>
-=======
-    <ion-navbar>
-      <ion-title>
-        Add Student
-      </ion-title>
-    </ion-navbar>
-  </ion-header>
-  
-  <ion-content padding>
-    <form [formGroup]="myForm" (ngSubmit)="saveForm()">
-      <ion-list>
-          <ion-item>
-              <ion-label stacked>ID:</ion-label>
-              <ion-input formControlName="id" type="number" placeholder="Id"></ion-input>
-            </ion-item>
-        <ion-item>
-          <ion-icon name="person" item-left></ion-icon>
-          <ion-label stacked>First Name:</ion-label>
-          <ion-input formControlName="firt_name" type="text" placeholder="Nombre"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-icon name="person" item-left></ion-icon>
-          <ion-label stacked>Last Name</ion-label>
-          <ion-input formControlName="last_name" type="text" placeholder="Apellidos"></ion-input>
-        </ion-item>
-        <<ion-item>
-            <ion-label>Classes</ion-label>
-            <ion-select [(ngModel)]="classes" multiple="true">
-              <ion-option>Matematicas</ion-option>
-              <ion-option>Fisica</ion-option>
-              <ion-option>Quimica</ion-option>
-              <ion-option>Historia</ion-option>
-              <ion-option>Ingles</ion-option>
-              <ion-option>Sociales</ion-option>
-            </ion-select>
-          </ion-item>
-        <ion-item>
-          <ion-icon name="calendar" item-left></ion-icon>
-          <ion-label stacked>Fecha de nacimiento:</ion-label>
-          <ion-datetime formControlName="date_birth" displayFormat="MM-DD-YYYY" placeholder="MM-DD-YYY"></ion-datetime>
-        </ion-item>
-        <div formGroupName="passwd">
-          <ion-item>
-            <ion-icon name="eye" item-left></ion-icon>
-            <ion-label stacked>Contraseña:</ion-label>
-            <ion-input formControlName="password" type="password" placeholder="Contraseña"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-icon name="eye" item-left></ion-icon>
-            <ion-label stacked>Confirmar contraseña:</ion-label>
-            <ion-input formControlName="password_confirmation" type="password" placeholder="Confirmar contraseña"></ion-input>
-          </ion-item>
-        </div>
-        <ion-row radio-group formControlName="gender">
-          <ion-item>
-            <ion-icon name="woman" item-left></ion-icon>
-            <ion-label>Mujer</ion-label>
-            <ion-radio value="2"></ion-radio>
-          </ion-item>
-          <ion-item>
-            <ion-icon name="man" item-left></ion-icon>
-            <ion-label>Hombre</ion-label>
-            <ion-radio value="1"></ion-radio>
-          </ion-item>
-        </ion-row>
-      </ion-list>
-      <div padding>
-        <button ion-button block type="submit" [disabled]="!myForm.valid">Guardar</button>
-      </div>
-    </form>
-  </ion-content>
-  
->>>>>>> 5eb32bd30da281b631bee70529b01a59e8694233

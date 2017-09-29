@@ -1,23 +1,23 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
+    <ion-navbar>
+        <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>List</ion-title>
-  </ion-navbar>
+        <ion-title>Teachers</ion-title>
+    </ion-navbar>
 </ion-header>
 
-<ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-left></ion-icon>
-      {{item.title}}
-      <div class="item-note" item-right>
-        {{item.note}}
-      </div>
-    </button>
-  </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
+<ion-content padding>
+    <ion-fab edge right top>
+        <button ion-fab mini (click)="AddTeacher()"><ion-icon ios="ios-person-add" md="md-person-add"></ion-icon></button>
+    </ion-fab>
+    <ion-list>
+        <button ion-item *ngFor="let teacher of teachers" (click)="teacherSelected(teacher)">
+            <ion-avatar item-start center>
+                <img src="http://icons.iconarchive.com/icons/graphicloads/flat-finance/32/person-icon.png">
+            </ion-avatar>               
+               <h2>{{teacher.last_name}}, {{teacher.firt_name}}</h2>
+               <h3>{{teacher.id}}</h3>
+            </button>
+    </ion-list>
 </ion-content>

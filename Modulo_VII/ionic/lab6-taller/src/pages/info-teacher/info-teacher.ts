@@ -1,25 +1,21 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ViewController, NavParams } from 'ionic-angular';
+import { Teacher } from '../../models/teacher';
 
-/**
- * Generated class for the InfoTeacherPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
-@IonicPage()
 @Component({
   selector: 'page-info-teacher',
   templateUrl: 'info-teacher.html',
 })
 export class InfoTeacherPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public infoTeacher: Teacher;
+  
+    constructor(public viewCtrl: ViewController, public nav: NavParams) {
+      this.infoTeacher = JSON.parse(nav.get('teacher'));
+    } 
+  
+    dismiss() {
+      this.viewCtrl.dismiss();
+    }
+  
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad InfoTeacherPage');
-  }
-
-}
