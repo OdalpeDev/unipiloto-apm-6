@@ -11,7 +11,7 @@ export class InfoTeacherPage {
   public infoTeacher: Teacher;
   
     constructor(public viewCtrl: ViewController, public nav: NavParams) {
-      this.infoTeacher = JSON.parse(nav.get('teacher'));
+      this.infoTeacher = nav.get('teacher');
     } 
   
     dismiss() {

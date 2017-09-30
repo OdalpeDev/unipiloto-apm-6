@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Storage } from '@ionic/storage';
-import {Student} from '../../models/student';
+import { StudentServiceProvider } from '../../providers/student-service/student-service';
 
 @IonicPage()
 @Component({
@@ -12,10 +12,8 @@ import {Student} from '../../models/student';
 export class AddStudentPage {
 
   myForm: FormGroup;
-  students: string;
-  listStudent: Student[];
 
-  constructor( public navCtrl: NavController, public navParams: NavParams, private storage: Storage, public formBuilder: FormBuilder) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, public formBuilder: FormBuilder, private listStudent: StudentServiceProvider) {
     this.myForm = this.createForm();
   }
 
@@ -37,25 +35,25 @@ export class AddStudentPage {
     this.storage.get('Students')
       .then(result => {
         if (result == null) {
-          this.students = '['+ JSON.stringify(this.myForm.value)+']';
-          this.listStudent =  JSON.parse(this.students);
+          this.listStudent.listStudents = new Array();
+          this.listStudent.listStudents = [this.myForm.value];
+
         }
         else {
-          this.listStudent = JSON.parse(result);
-          this.listStudent.push(this.myForm.value);
+          this.listStudent.listStudents = new Array();
+          this.listStudent.listStudents = JSON.parse(result);
+          this.listStudent.listStudents.push(this.myForm.value);
         }
-
-        this.storage.set('Students',JSON.stringify(this.listStudent) );
+        this.storage.set('Students', JSON.stringify(this.listStudent.listStudents));
         this.myForm.reset();
-
       })
       .catch(error => console.error('Se presentó guardando datos del estudiante.' + error));
   }
 
   //
-  CancelarAdd(){
-      this.navCtrl.pop();
-    }
-  
+  CancelarAdd() {
+    this.navCtrl.pop();
+  }
+
 
 }

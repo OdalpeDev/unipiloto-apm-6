@@ -34,8 +34,16 @@ export class AddStudentPage {
 
     this.storage.get('Students')
       .then(result => {
-        this.listStudent.listStudents = JSON.parse(result);
-        this.listStudent.listStudents.push(this.myForm.value);
+        if (result == null) {
+          this.listStudent.listStudents = new Array();
+          this.listStudent.listStudents = [this.myForm.value];
+
+        }
+        else {
+          this.listStudent.listStudents = new Array();
+          this.listStudent.listStudents = JSON.parse(result);
+          this.listStudent.listStudents.push(this.myForm.value);
+        }
         this.storage.set('Students', JSON.stringify(this.listStudent.listStudents));
         this.myForm.reset();
       })

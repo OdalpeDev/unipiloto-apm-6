@@ -12,9 +12,9 @@
         <button ion-fab mini (click)="AddTeacher()"><ion-icon ios="ios-person-add" md="md-person-add"></ion-icon></button>
     </ion-fab>
     <ion-list>
-        <button ion-item *ngFor="let teacher of teachers" (click)="teacherSelected(teacher)">
+        <button ion-item *ngFor="let teacher of listTeacher.listTachers" (click)="teacherSelected(teacher)">
             <ion-avatar item-start center>
-                <img src="http://icons.iconarchive.com/icons/graphicloads/flat-finance/32/person-icon.png">
+                <img src="../../assets/person.png">
             </ion-avatar>               
                <h2>{{teacher.last_name}}, {{teacher.firt_name}}</h2>
                <h3>{{teacher.id}}</h3>

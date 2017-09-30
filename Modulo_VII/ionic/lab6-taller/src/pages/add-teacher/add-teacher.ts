@@ -37,7 +37,7 @@ export class AddTeacherPage {
       .then(result => {
         if(result == null){
         this.listTeacher.listTachers = new Array();
-        this.listTeacher.listTachers = JSON.parse('[' + JSON.stringify(this.myForm.value) + ']');
+        this.listTeacher.listTachers = [this.myForm.value];
         }
         else{
           this.listTeacher.listTachers = new Array();
@@ -45,7 +45,7 @@ export class AddTeacherPage {
           this.listTeacher.listTachers.push(this.myForm.value);
         }
 
-        this.storage.set('Teachers -> ', JSON.stringify(this.listTeacher.listTachers));
+        this.storage.set('Teachers', JSON.stringify(this.listTeacher.listTachers));
         this.myForm.reset();
 
       })

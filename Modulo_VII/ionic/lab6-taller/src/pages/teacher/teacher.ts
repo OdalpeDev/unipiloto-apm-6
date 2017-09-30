@@ -18,7 +18,7 @@ export class TeacherPage {
   }
 
   mostrarTeachers() {
-    //this.storage.remove('Teachers');
+   // this.storage.remove('Teachers');
     this.storage.get('Teachers')
       .then(result => {
         if (result != null) {
@@ -30,7 +30,7 @@ export class TeacherPage {
   }
 
   teacherSelected(_teacher: Teacher) {
-    let profileModal = this.modalCtrl.create(InfoTeacherPage, { teacher: JSON.stringify(_teacher) });
+    let profileModal = this.modalCtrl.create(InfoTeacherPage, { teacher: _teacher });
     profileModal.present();
   }
 

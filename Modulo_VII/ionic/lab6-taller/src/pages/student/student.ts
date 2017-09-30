@@ -29,13 +29,12 @@ export class StudentPage {
         if (result != null) {
          this.listStudent.listStudents = JSON.parse(result);
         }
-        console.log('mostrar ->' + JSON.stringify(this.listStudent.listStudents));
       })
       .catch(error => console.error('Se presentó error consultando los estudiantes.' + error));
   }
 
   studentSelected(_student: Student) {
-    let profileModal = this.modalCtrl.create(InfoStudentPage, { student: JSON.stringify(_student) });
+    let profileModal = this.modalCtrl.create(InfoStudentPage, { student: _student });
     profileModal.present();
   }
 

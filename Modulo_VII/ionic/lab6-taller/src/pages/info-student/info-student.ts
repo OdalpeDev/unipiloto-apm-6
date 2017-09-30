@@ -11,7 +11,7 @@ export class InfoStudentPage {
   public infoStudent: Student;
 
   constructor(public viewCtrl: ViewController, public nav: NavParams) {
-    this.infoStudent = JSON.parse(nav.get('student'));
+    this.infoStudent = nav.get('student');
   }
 
   dismiss() {
