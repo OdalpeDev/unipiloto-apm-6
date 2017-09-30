@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      About
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label fixed>Latitud</ion-label>
+      <ion-input type="number" value="{{latitud}}"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Longitud</ion-label>
+      <ion-input type="number" value="{{longitud}}"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <button ion-button color="light" (click)="solicitarPosicion()">Light</button>
+
+</ion-content>

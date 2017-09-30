@@ -1,0 +1,8 @@
+{
+  "name": "lab8-native-network",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
