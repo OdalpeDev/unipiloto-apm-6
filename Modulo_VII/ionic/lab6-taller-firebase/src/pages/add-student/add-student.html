@@ -1,0 +1,53 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Add-student</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+    <form [formGroup]="myForm" (ngSubmit)="saveDataStudent()">
+        <ion-list>
+            <ion-item>
+                <ion-label floating>ID</ion-label>
+                <ion-input formControlName="id" type="number"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>First Name</ion-label>
+                <ion-input formControlName="firt_name" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Last Name</ion-label>
+                <ion-input formControlName="last_name" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Age</ion-label>
+                <ion-input formControlName="age" type="number"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Classes</ion-label>
+                <ion-select formControlName="classes" multiple="true" cancelText="Cancelar" okText="OK">
+                    <ion-option>Matematicas</ion-option>
+                    <ion-option>Fisica</ion-option>
+                    <ion-option>Quimica</ion-option>
+                    <ion-option>Historia</ion-option>
+                    <ion-option>Ingles</ion-option>
+                    <ion-option>Sociales</ion-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Grade</ion-label>
+                <ion-input formControlName="grade" type="number"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Group</ion-label>
+                <ion-input formControlName="group" type="text"></ion-input>
+            </ion-item>
+        </ion-list>
+
+        <button ion-button block type="submit" [disabled]="!myForm.valid">Guardar</button>
+        <button ion-button block color="light" type="button" (click)="CancelarAdd()">Cancel</button>
+
+    </form>
+</ion-content>

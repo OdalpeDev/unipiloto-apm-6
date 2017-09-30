@@ -4,16 +4,16 @@ import { Student } from '../../models/student';
 import { InfoStudentPage } from '../info-student/info-student';
 import { AddStudentPage } from '../add-student/add-student';
 import { Storage } from '@ionic/storage';
-import { StudentServiceProvider } from '../../providers/student-service/student-service';
 
 @Component({
   selector: 'page-student',
   templateUrl: 'student.html'
 })
 export class StudentPage {
-  _student: Student; 
+  _student: Student; // = {id: 1, age: 0, name: '', lastname: '', grade: 0, group: '', classes: ['']};
+  students: Student[] = new Array(); //=[this._student];
 
-  constructor(public navCtrl: NavController, private storage: Storage, public modalCtrl: ModalController, private listStudent: StudentServiceProvider) {
+  constructor(public navCtrl: NavController, private storage: Storage, public modalCtrl: ModalController) {
     console.log('constructor');
   }
 
@@ -27,9 +27,9 @@ export class StudentPage {
     this.storage.get('Students')
       .then(result => {
         if (result != null) {
-         this.listStudent.listStudents = JSON.parse(result);
+          this.students = JSON.parse(result);
         }
-        console.log('mostrar ->' + JSON.stringify(this.listStudent.listStudents));
+        console.log(this.students);
       })
       .catch(error => console.error('Se presentó error consultando los estudiantes.' + error));
   }

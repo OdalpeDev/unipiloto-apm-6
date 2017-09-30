@@ -1,0 +1,51 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>add-teacher</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+    <form [formGroup]="myForm" (ngSubmit)="saveDataTeacher()">
+        <ion-list>
+            <ion-item>
+                <ion-label floating>ID</ion-label>
+                <ion-input formControlName="id" type="number"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>First Name</ion-label>
+                <ion-input formControlName="firt_name" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Last Name</ion-label>
+                <ion-input formControlName="last_name" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Age</ion-label>
+                <ion-input formControlName="age" type="number"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Profession</ion-label>
+                <ion-select formControlName="profession" interface="popover">
+                    <ion-option value="Matematico(a)">Matematico(a)</ion-option>
+                    <ion-option value="Fisico(a)">Fisico(a)</ion-option>
+                    <ion-option value="Quimico(a)">Quimico(a)</ion-option>
+                    <ion-option value="Ingeniero(a)">Ingeniero(a)</ion-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Grades</ion-label>
+                <ion-input formControlName="grades" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Groups</ion-label>
+                <ion-input formControlName="groups" type="text"></ion-input>
+            </ion-item>
+        </ion-list>
+
+        <button ion-button block type="submit" [disabled]="!myForm.valid">Guardar</button>
+        <button ion-button block color="light" (click)="CancelarAdd()">Cancel</button>
+
+    </form>
+</ion-content>

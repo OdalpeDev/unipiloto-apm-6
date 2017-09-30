@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Storage } from '@ionic/storage';
-import { TeacherServiceProvider } from '../../providers/teacher-service/teacher-service';
-
+import { Teacher } from '../../models/teacher';
 
 @IonicPage()
 @Component({
@@ -13,8 +12,10 @@ import { TeacherServiceProvider } from '../../providers/teacher-service/teacher-
 export class AddTeacherPage {
 
   myForm: FormGroup;
+  teachers: string;
+  listTeacher: Teacher[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, public formBuilder: FormBuilder, private listTeacher: TeacherServiceProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, public formBuilder: FormBuilder) {
     this.myForm = this.createForm();
   }
 
@@ -35,17 +36,16 @@ export class AddTeacherPage {
 
     this.storage.get('Teachers')
       .then(result => {
-        if(result == null){
-        this.listTeacher.listTachers = new Array();
-        this.listTeacher.listTachers = JSON.parse('[' + JSON.stringify(this.myForm.value) + ']');
+        if (result == null) {
+          this.teachers = '[' + JSON.stringify(this.myForm.value) + ']';
+          this.listTeacher = JSON.parse(this.teachers);
         }
-        else{
-          this.listTeacher.listTachers = new Array();
-          this.listTeacher.listTachers = JSON.parse(result);
-          this.listTeacher.listTachers.push(this.myForm.value);
+        else {
+          this.listTeacher = JSON.parse(result);
+          this.listTeacher.push(this.myForm.value);
         }
 
-        this.storage.set('Teachers -> ', JSON.stringify(this.listTeacher.listTachers));
+        this.storage.set('Teachers', JSON.stringify(this.listTeacher));
         this.myForm.reset();
 
       })
