@@ -4,6 +4,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { Network } from '@ionic-native/network';
 import { Dialogs } from '@ionic-native/dialogs';
 import { Geolocation } from '@ionic-native/geolocation';
+import { Device } from '@ionic-native/device';
 import { MyApp } from './app.component';
 
 
@@ -42,6 +43,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     Network,
     Dialogs,
     Geolocation,
+    Device,
     {provide: ErrorHandler, useClass: IonicErrorHandler}    
   ]
 })
